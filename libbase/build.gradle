@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -28,6 +28,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -41,4 +45,31 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+
+    //lifecycle
+    implementation deps.lifecycle.runtime
+    implementation deps.lifecycle.extensions
+    annotationProcessor deps.lifecycle.compiler
+
+    //常用数据、媒体组件
+
+    api "com.github.bumptech.glide:glide:4.15.1"
+
+    api "com.google.code.gson:gson:2.10.1"
+    api "com.squareup.retrofit2:retrofit:2.9.0"
+    api "com.squareup.retrofit2:converter-gson:2.9.0"
+    api "com.squareup.okhttp3:logging-interceptor:4.11.0"
+    api "com.squareup.okhttp3:okhttp:4.11.0"
+
+    api 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    api 'io.reactivex.rxjava2:rxjava:2.2.21'
+
+
+    //dialog
+    api "com.afollestad.material-dialogs:lifecycle:3.3.0"
+    api "com.afollestad.material-dialogs:core:3.3.0"
+    api "com.afollestad.material-dialogs:color:3.3.0"
+    api "com.afollestad.material-dialogs:datetime:3.3.0"
+    api "com.afollestad.material-dialogs:bottomsheets:3.3.0"
 }

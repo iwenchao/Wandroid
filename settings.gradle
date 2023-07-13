@@ -9,7 +9,7 @@ pluginManagement {
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/google' }
         maven { url 'https://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
-        maven { url "https://www.jitpack.io" }//add
+        maven { url "https://www.jitpack.io" }//
     }
 }
 dependencyResolutionManagement {
